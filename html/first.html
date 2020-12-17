@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+ <title>Cards</title>
+<style>
+*{
+ margin: 0px;
+ padding: 0px;
+}
+body{
+ font-family: arial;
+}
+.card{
+     width: 50%;
+     display: inline-block;
+     box-shadow: 2px 2px 20px black;
+     border-radius: 5px; 
+     margin: 2%;
+     margin-left: 25%;
+     align-items:center;
+    }
+.image img{
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  }
+
+.title{
+ 
+  text-align: center;
+  padding: 10px;
+  
+ }
+h1{
+  font-size: 20px;
+ }
+
+.des{
+  padding: 3px;
+  text-align: center;
+ 
+  padding-top: 10px;
+        border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+input{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+input:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+</style>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+ 
+<body>
+ 
+<div class="main">
+ 
+ <!--cards -->
+ 
+<div class="card">
+ 
+<div class="image">
+   <img src="https://wallpapercave.com/wp/wp2099227.jpg">
+</div>
+<div class="title">
+ <h1>
+Write title Here</h1>
+</div>
+<div class="des">
+ <p>You can Add Description Here...</p>
+ <input type="button" onclick="window.open('http://localhost:8082/kafka/publish')" value="Publish">
+  <input type="button" onclick="window.open('table2.html')" value="Simulate">
+
+<button>Stop</button>
+</div>
+</div>
+</body>
+</html>

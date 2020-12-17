@@ -1,0 +1,136 @@
+<html lang="en"> 
+  
+<head> 
+    <meta charset="UTF-8"> 
+    <title>GFG User Details</title> 
+  
+    <!-- INCLUDING JQUERY-->
+    <script src= 
+"https://code.jquery.com/jquery-3.5.1.js"> 
+    </script> 
+  
+    <!-- CSS FOR STYLING THE PAGE -->
+    <style> 
+        table { 
+            margin: 0 auto; 
+            font-size: large; 
+            border: 1px solid black; 
+        } 
+  
+        h1 { 
+            text-align: center; 
+            color: #006600; 
+            font-size: xx-large; 
+            font-family: 'Gill Sans',  
+                'Gill Sans MT', ' Calibri',  
+                'Trebuchet MS', 'sans-serif'; 
+        } 
+  
+        td { 
+            background-color: #E4F5D4; 
+            border: 1px solid black; 
+        } 
+  
+        th, 
+        td { 
+            font-weight: bold; 
+            border: 1px solid black; 
+            padding: 10px; 
+            text-align: center; 
+        } 
+  
+        td { 
+            font-weight: lighter; 
+        } 
+    </style> 
+       <script src= 
+"https://code.jquery.com/jquery-3.5.1.js"> 
+    </script> 
+    
+</head> 
+  
+<body> 
+    <section> 
+        <h1>Simulated data</h1> 
+  
+        <!-- TABLE CONSTRUCTION-->
+        <table id='table'> 
+            <!-- HEADING FORMATION -->
+            <tr> 
+               <th>Vin</th>
+                <th>Engine Status</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Name</th>
+                <th>Engine RPM</th>
+                <th>Speed</th>
+                <th>Fuel Capacity</th>
+                <th>Fuel Consumption</th>
+                <th>Odometer</th>
+                <th>Engine Load</th>
+                <th>Engine Temperature</th> 
+            </tr> 
+   <script> 
+                $(document).ready(function () { 
+                    console.log("hii");
+                    // FETCHING DATA FROM JSON FILE 
+                    $.getJSON("jsonData.json",  
+                            function (data) { 
+                        var student = ''; 
+  
+                        // ITERATING THROUGH OBJECTS 
+                        $.each(data, function (key, value) { 
+  
+                            //CONSTRUCTION OF ROWS HAVING 
+                            // DATA FROM JSON OBJECT 
+                            student += '<tr>'; 
+                            student += '<td>' +  
+                                value.vin + '</td>'; 
+  
+                            student += '<td>' +  
+                                value.engine_status + '</td>'; 
+  
+                            student += '<td>' +  
+                                value.latitude + '</td>'; 
+  
+                            student += '<td>' +  
+                                value.longitude + '</td>';
+
+                            student += '<td>' +  
+                                value.name + '</td>'; 
+
+                            student += '<td>' +  
+                                value.engine_rpm + '</td>'; 
+
+                            student += '<td>' +  
+                                value.speed + '</td>'; 
+
+                            student += '<td>' +  
+                                value.fuel_capacity + '</td>';  
+
+                            student += '<td>' +  
+                                value.fuel_consumption + '</td>';
+
+                            student += '<td>' +  
+                                value.odometer + '</td>'; 
+
+                            student += '<td>' +  
+                                value.engine_load + '</td>'; 
+
+                            student += '<td>' +  
+                                value.engine_temp + '</td>';   
+  
+  
+                            student += '</tr>'; 
+                        }); 
+                          
+                        //INSERTING ROWS INTO TABLE  
+                        $('#table').append(student); 
+                    }); 
+                }); 
+            </script>
+            
+    </section> 
+</body> 
+  
+</html> 
